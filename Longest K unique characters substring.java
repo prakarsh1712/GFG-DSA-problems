@@ -13,6 +13,7 @@ class GfG {
         }
     }
 }
+// } Driver Code Ends
 
 class Solution {
     public int longestkSubstr(String s, int k) {
@@ -31,6 +32,7 @@ class Solution {
             
             if(hmap.size()==k)
             {
+                //System.out.println("here");
                 maxlen = Math.max(j-i, maxlen);
             }
             if(hmap.size() > k) {
@@ -38,6 +40,7 @@ class Solution {
                 hmap.remove(s.charAt(j));
                 maxlen = Math.max(j-i, maxlen);
             }
+            //System.out.println(s.substring(i,j));
             
             while(i<=j && hmap.size()==k) {
                 char ch = s.charAt(i);
@@ -46,7 +49,10 @@ class Solution {
                     hmap.remove(ch);
                 i++;
             }
+            
         }
         return maxlen;
+        
+       
     }
 }
